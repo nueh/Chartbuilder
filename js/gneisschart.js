@@ -75,17 +75,17 @@ Gneiss.defaultGneissChartConfig = {
 	],
 	series: [
 		{
-			name: "apples",
+			name: "Äpfel",
 			data: [5.5,10.2,6.1,3.8],
-			source: "Some Org",
+			source: "Tourist information Altes Land",
 			type: "line",
 			axis: 0,
 			color: null
 		},
 		{
-			name: "oranges",
+			name: "Birnen",
 			data: [23,10,13,7],
-			source: "Some Org",
+			source: "Tourist information Altes Land",
 			type: "line",
 			axis: 0,
 			color: null
@@ -94,7 +94,7 @@ Gneiss.defaultGneissChartConfig = {
 	xAxisRef: [
 		{
 			name: "names",
-			data: ["juicyness","color","flavor","travelability"]
+			data: ["Saftigkeit","Farbe","Geschmack","travelability"]
 		}
 	],
 	sourceline: "",
