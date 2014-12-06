@@ -94,7 +94,7 @@ Gneiss.defaultGneissChartConfig = {
 	xAxisRef: [
 		{
 			name: "Eigenschaften",
-			data: ["Saftigkeit","Farbe","Geschmack","travelability"]
+			data: ["Saftigkeit","Farbe","Geschmack","Haltbarkeit"]
 		}
 	],
 	sourceline: "",
