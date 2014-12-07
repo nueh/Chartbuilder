@@ -2,7 +2,36 @@
 // Make sure to change the name of the font 
 // in the webfont.js loader in index.html
 */
-/*@import url(//fonts.googleapis.com/css?family=Cutive);*/
+
+@font-face {
+    font-family: "Tisa Sans";
+    src: url(/assets/TisaSansWebPro-87707ecfcbab64c16ad3c3acffb01180.eot);
+    src: url(/assets/TisaSansWebPro-87707ecfcbab64c16ad3c3acffb01180.eot?#iefix) format("embedded-opentype"), url(/assets/TisaSansWebPro-cf6d3f137f38ed38e586920ed9eba88b.woff) format("woff"), url(/assets/tisasanscomppro-webfont-157b91ecea76072b457dd9104c58b76e.svg#tisasanscompproregular) format("svg");
+    font-style: normal;
+    font-weight: normal
+}
+
+@font-face {
+    font-family: "Tisa Sans";
+    font-weight: bold;
+    src: url(/assets/TisaSansWebPro-Bold-1832109cbabb5bf66c983299cd5aacd5.eot);
+    src: url(/assets/TisaSansWebPro-Bold-1832109cbabb5bf66c983299cd5aacd5.eot?#iefix) format("embedded-opentype"), url(/assets/TisaSansWebPro-Bold-a52cba1d44aae0ae3524973aca272bd6.woff) format("woff"), url(/assets/tisasanscomppro-bold-webfont-42e25d57be5d23d2f84e79e8e910335b.svg#tisasanscomppro-boldregular) format("svg")
+}
+
+@font-face {
+    font-family: "Tisa Sans";
+    font-style: italic;
+    src: url(/assets/TisaSansWebPro-Italic-9508290acfcd8da4c034adb869f1f1cc.eot);
+    src: url(/assets/TisaSansWebPro-Italic-9508290acfcd8da4c034adb869f1f1cc.eot?#iefix) format("embedded-opentype"), url(/assets/TisaSansWebPro-Italic-d0842212725635c9b7271e3083dbcef2.woff) format("woff"), url(/assets/tisasanscomppro-italic-webfont-a397c7892499c625eaed96e15b7989a2.svg#tisasanscomppro-italicregular) format("svg")
+}
+
+@font-face {
+    font-family: "Tisa Sans";
+    font-weight: bold;
+    font-style: italic;
+    src: url(/assets/TisaSansWebPro-BoldItalic-afa5e7015f1f976fd3de044a54786a9b.eot);
+    src: url(/assets/TisaSansWebPro-BoldItalic-afa5e7015f1f976fd3de044a54786a9b.eot?#iefix) format("embedded-opentype"), url(/assets/TisaSansWebPro-BoldItalic-c94f5290e3a51f673c70ec50701d6602.woff) format("woff"), url(/assets/tisasanscomppro-bolditalic-webfont-3c2d75188526b444bae0bb28352cd285.svg#tisasanscomppro-bolditalicRg) format("svg")
+}
 
 svg {
 	font-size: 14px;
@@ -41,15 +70,15 @@ svg .axis path {
 }
 
 svg .axis text {
-	font-family: 'Cutive',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, sans-serif;
 }
 
 svg .legendItem text {
-	font-family: 'Cutive',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, sans-serif;
 }
 
 svg text.metaText {
-	font-family: 'Cutive',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, sans-serif;
 	font-size:  10px;
 	text-rendering:   optimizeLegibility;
 	fill:  #999999;
@@ -57,7 +86,7 @@ svg text.metaText {
 
 svg text.barLabel, 
 svg text.bargridLabel {
-	font-family: 'Cutive',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, sans-serif;
 }
 
 /*Default styling of series*/
@@ -75,6 +104,6 @@ svg .seriesScatter circle {
 }
 	
 #titleLine {
-	font-family: 'Cutive',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, sans-serif;
 	fill: #666666;
 }

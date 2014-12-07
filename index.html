@@ -21,7 +21,7 @@
 		<!-- Chartbuilder CSS -->
 		<link rel="stylesheet" href="css/chartbuilder.css" type="text/css" media="screen" charset="utf-8">
 		<link rel="stylesheet" href="css/gneisschart.css" type="text/css" media="screen" charset="utf-8">
-		<link rel="stylesheet" href="css/colorPicker.css" type="text/css" media="screen" charset="utf-8">
+		<!-- <link rel="stylesheet" href="css/colorPicker.css" type="text/css" media="screen" charset="utf-8"> -->
 	</head>
 	<body>
 		<!-- Add your site or application content here -->
@@ -68,40 +68,40 @@
   					<div class="optionBlock">
     					<h2>3. Diagramm-Optionen</h2>
     						<div class="optionGroup"><label for="chart_title">Titel</label><input type="text" name="chart_title" value="" id="chart_title"></div>
-    						<!-- <div class="optionGroup"><label for="credit">Credit</label><input id="creditLine" type="text" name="credit" value="Krautreporter"></div> -->
     						<div class="optionGroup"><label for="source">Quelle</label><input id="sourceLine" type="text" name="source" value="Quelle: ">
     						<cite>Sowas wie "Quelle: Beleg (mit Seitenangabe); ggf. Hinweis auf ergänzte/ überarbeitete Version." oder "Quelle: Internet" ;)</cite></div>
+    						<div class="optionGroup"><label for="credit">Credit</label><input id="creditLine" type="text" name="credit" value=""></div>
     				</div>
     				<div class="optionBlock">
-   							<h2>4. Right Axis Options</h2>
+   							<h2>4. Rechte Y-Achse</h2>
     						<div id="rightAxisControls">
-    							<div class="optionGroup"><label for="right_axis_prefix">Right Axis Prefix</label><input type="text" name="right_axis_prefix" value="" id="right_axis_prefix"></div>
-	    						<div class="optionGroup"><label for="right_axis_suffix">Right Axis Suffix</label><input type="text" name="right_axis_suffix" value="" id="right_axis_suffix"></div>
-	    						<div class="optionGroup"><label for="right_axis_tick_num">Number of Y Axis Ticks</label><select name="right_axis_tick_num" id="right_axis_tick_num" size="1">
+    							<div class="optionGroup"><label for="right_axis_prefix">Präfix</label><input type="text" name="right_axis_prefix" value="" id="right_axis_prefix"></div>
+	    						<div class="optionGroup"><label for="right_axis_suffix">Suffix</label><input type="text" name="right_axis_suffix" value="" id="right_axis_suffix"></div>
+	    						<div class="optionGroup"><label for="right_axis_tick_num">Anzahl der Teilstriche</label><select name="right_axis_tick_num" id="right_axis_tick_num" size="1">
 	    							<option>3</option>
-	    							<option selected >4</option>
+	    							<option>4</option>
 	    							<option>5</option>
-	    							<option>6</option>
+	    							<option selected >6</option>
                     <option>7</option>
                     <option>8</option>
                     <option>9</option>
                     <option>10</option>
 	    						</select></div>
-    							<div class="optionGroup"><label for="right_axis_max">Right Axis Max</label><input type="text" name="right_axis_max" value="" id="right_axis_max"></div>
-    							<div class="optionGroup"><label for="right_axis_min">Right Axis Min</label><input type="text" name="right_axis_min" value="" id="right_axis_min"></div>
+    							<div class="optionGroup"><label for="right_axis_max">Maximum</label><input type="text" name="right_axis_max" value="25" id="right_axis_max"></div>
+    							<div class="optionGroup"><label for="right_axis_min">Minimum</label><input type="text" name="right_axis_min" value="0" id="right_axis_min"></div>
     							<div class="optionGroup advanced"><label for="right_axis_tick_override">Right Axis Tick Override</label><input type="text" name="right_axis_tick_override" value="" id="right_axis_tick_override"></div>
     						</div>
     					</div>
     					<div id="leftAxisControls" class="optionBlock hide">
-  							<h2>4+ Left Axis Options</h2>
-  							<div class="optionGroup"><label for="left_axis_prefix">Left Axis Prefix</label><input type="text" name="left_axis_prefix" value="" id="left_axis_prefix"></div>
-  							<div class="optionGroup"><label for="left_axis_suffix">Left Axis Suffix</label><input type="text" name="left_axis_suffix" value="" id="left_axis_suffix"></div>
-  							<div class="optionGroup"><label for="left_axis_max">Left Axis Max</label><input type="text" name="left_axis_max" value="" id="left_axis_max"></div>
-  							<div class="optionGroup"><label for="left_axis_min">Left Axis Min</label><input type="text" name="left_axis_min" value="" id="left_axis_min"></div>
+  							<h2>4+ Linke Y-Achse</h2>
+  							<div class="optionGroup"><label for="left_axis_prefix">Präfix</label><input type="text" name="left_axis_prefix" value="" id="left_axis_prefix"></div>
+  							<div class="optionGroup"><label for="left_axis_suffix">Suffix</label><input type="text" name="left_axis_suffix" value="" id="left_axis_suffix"></div>
+  							<div class="optionGroup"><label for="left_axis_max">Maximum</label><input type="text" name="left_axis_max" value="" id="left_axis_max"></div>
+  							<div class="optionGroup"><label for="left_axis_min">Minimum</label><input type="text" name="left_axis_min" value="" id="left_axis_min"></div>
   							<div class="optionGroup"><label for="left_axis_tick_override">Left Axis Tick Override</label><input type="text" name="left_axis_tick_override" value="" id="left_axis_tick_override" ></div>
     					</div>
     					<div class="optionBlock">
-    					<h2>5. Bottom Axis Options</h2>
+    					<h2>5. X-Achse</h2>
 						<div class="optionGroup showonlywith-date">
 							<label for="x_axis_tick_date_frequency">Tick date frequency</label><select name="x_axis_tick_date_frequency" id="x_axis_tick_date_frequency" size="1">
 								<option selected>auto</option>
@@ -189,19 +189,16 @@
 		<script type="text/javascript">
 
 		//This loads the webfonts and starts Chartbuilder once they're present
-		// WebFont.load({
-		// 	custom: {
-		// 		families: ["Cutive"]
-		// 	},
-		// 	// custom: {
-		// 	// 	families: ["Tisa Sans:n4,n7,i4,i7"]
-		// 	// },
-		//     active: function(name) {
+		WebFont.load({
+			custom: {
+				families: ["Tisa Sans:n4,n7,i4,i7"]
+			},
+		    active: function(name) {
 		        $(document).ready(function() {
 		            ChartBuilder.start();
 		        });
-		//     }
-		// });
+		    }
+		});
 
 		</script>
 	</body>

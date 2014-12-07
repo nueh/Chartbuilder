@@ -25,11 +25,13 @@ cite {
 }
 
 h1 {
+	font-family: "Tisa Sans", Helvetica, Arial, "MS Trebuchet", sans-serif;
 	font-size: 2em;
 	line-height: 1.5em;
 }
 
 h2 {
+	font-family: "Tisa Sans", Helvetica, Arial, "MS Trebuchet", sans-serif;
 	font-size: 1.5em;
 	line-height: 1.5em;
 	margin-top: 0;
@@ -186,7 +188,8 @@ textarea,
 select {
 	display: block;
 	margin-bottom: 1em;
-	font-family: 'PTSerif';
+/*	font-family: 'PTSerif';*/
+	font-family: "Tisa Sans", Helvetica, Arial, "MS Trebuchet", sans-serif;
 	color: #666666;
 	border: 1px solid #ccc;
   -moz-box-sizing: border-box;
@@ -209,7 +212,7 @@ select {
 }
 
 label {
-	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-family: "Tisa Sans", Helvetica, Arial, "MS Trebuchet", sans-serif;
 	color: #666666;
 	display: block;
 	font-size: 1em;
@@ -334,7 +337,7 @@ textarea {
 }
 
 .updateButton p {
-	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-family: "Tisa Sans", Helvetica, Arial, "MS Trebuchet", sans-serif;
 	padding: 5px;
 	background-color: #999;
 	color: #ffffff;
