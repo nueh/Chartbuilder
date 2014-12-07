@@ -68,7 +68,7 @@ Gneiss.defaultGneissChartConfig = {
 				value: "",
 				use: "top"
 			},
-			ticks: 4,
+			ticks: 6,
 			formatter: null,
 			color: null
 		}
@@ -98,7 +98,7 @@ Gneiss.defaultGneissChartConfig = {
 		}
 	],
 	sourceline: "",
-	creditline: "Made with Chartbuilder"
+	creditline: "Krautreporter"
 };
 
 Gneiss.dateParsers = {
