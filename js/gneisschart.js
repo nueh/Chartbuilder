@@ -16,7 +16,7 @@ var yAxisIndex;
 //add prepend ability
 Element.prototype.prependChild = function(child) { this.insertBefore(child, this.firstChild); };
 
-Date.setLocale('de');
+Date.setLocale('en');
 
 //A default configuration 
 //Should change to more d3esque methods e.g. http://bost.ocks.org/mike/chart/
