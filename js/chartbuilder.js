@@ -22,6 +22,12 @@ ChartBuilder = {
 		var csv_matrix = [];
 		var delim = String.fromCharCode(9);
 
+		// console.info("Tausender: " + this.separators.thousands + " Dezimal: " + this.separators.decimal)
+		// var userLang = navigator.language || navigator.language;
+		// console.info(userLang)
+		// var number = 123456.789;
+		// console.log(number.toLocaleString('de-DE'));
+		
 		if (delim == this.separators.thousands || delim == this.separators.decimal) {
 			console.warn("Your text deliminator is the same as your locale's thousands separator or decimal separator")
 		}

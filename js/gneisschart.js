@@ -16,7 +16,7 @@ var yAxisIndex;
 //add prepend ability
 Element.prototype.prependChild = function(child) { this.insertBefore(child, this.firstChild); };
 
-Date.setLocale('en');
+Date.setLocale('de');
 
 //A default configuration 
 //Should change to more d3esque methods e.g. http://bost.ocks.org/mike/chart/
@@ -58,7 +58,7 @@ Gneiss.defaultGneissChartConfig = {
 	},
 	yAxis: [
 		{
-			domain: [0,25],
+			domain: [0,null],
 			tickValues: null,
 			prefix: {
 				value: "",
