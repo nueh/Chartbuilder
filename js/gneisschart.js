@@ -62,11 +62,11 @@ Gneiss.defaultGneissChartConfig = {
 			tickValues: null,
 			prefix: {
 				value: "",
-				use: "all" //can be "top" "all" "positive" or "negative"
+				use: "top" //can be "top" "all" "positive" or "negative"
 			},
 			suffix: {
 				value: "",
-				use: "all"
+				use: "top"
 			},
 			ticks: 6,
 			formatter: null,
@@ -1005,6 +1005,7 @@ function Gneiss(config)
 					
 					//store the text element of the axisItem
 					axisItem.text = d3.select(this).select("text");
+					
 
 					//store the line element of the axisItem	
 					axisItem.line = d3.select(this).select("line")
@@ -1015,7 +1016,7 @@ function Gneiss(config)
 					switch(curAxis.prefix.use) {
 						case "all":
 							//if the prefix is supposed to be on every axisItem label, put it there
-							axisItem.text.text(curAxis.prefix.value + axisItem.text.text().split(".").join(","));
+							axisItem.text.text(curAxis.prefix.value + axisItem.text.text());
 						break;
 						
 						case "positive":
@@ -1033,7 +1034,7 @@ function Gneiss(config)
 						break;
 						
 						case "top":
-							//do nothing
+							// do nothing
 						break;
 					}
 					
@@ -1062,6 +1063,9 @@ function Gneiss(config)
 							//do nothing
 						break;
 					}
+					
+					//replace '.' with ',' -- localization hack
+					axisItem.text.text(axisItem.text.text().split(".").join(","));
 					
 					//find the top most axisItem
 					//store its text element
