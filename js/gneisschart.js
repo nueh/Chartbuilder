@@ -76,7 +76,7 @@ Gneiss.defaultGneissChartConfig = {
 	series: [
 		{
 			name: "Äpfel",
-			data: [5.5,10.2,6.1,3.8],
+			data: [4.5,1.2,2.1,3.8],
 			source: "",
 			type: "line",
 			axis: 0,
@@ -84,7 +84,7 @@ Gneiss.defaultGneissChartConfig = {
 		},
 		{
 			name: "Birnen",
-			data: [23,10.9,13,7],
+			data: [2.3,1.9,1.3,2.1],
 			source: "",
 			type: "line",
 			axis: 0,
