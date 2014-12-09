@@ -70,15 +70,15 @@ svg .axis path {
 }
 
 svg .axis text {
-	font-family: 'Tisa Sans',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, Arial, sans-serif;
 }
 
 svg .legendItem text {
-	font-family: 'Tisa Sans',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, Arial, sans-serif;
 }
 
 svg text.metaText {
-	font-family: 'Tisa Sans',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, Arial, sans-serif;
 	font-size:  10px;
 	text-rendering:   optimizeLegibility;
 	fill:  #999999;
@@ -86,7 +86,7 @@ svg text.metaText {
 
 svg text.barLabel, 
 svg text.bargridLabel {
-	font-family: 'Tisa Sans',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, Arial, sans-serif;
 }
 
 /*Default styling of series*/
@@ -104,6 +104,6 @@ svg .seriesScatter circle {
 }
 	
 #titleLine {
-	font-family: 'Tisa Sans',Helvetica, sans-serif;
+	font-family: 'Tisa Sans',Helvetica, Arial, sans-serif;
 	fill: #666666;
 }

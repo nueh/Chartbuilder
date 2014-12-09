@@ -58,15 +58,15 @@ Gneiss.defaultGneissChartConfig = {
 	},
 	yAxis: [
 		{
-			domain: [0,null],
+			domain: [null,null],
 			tickValues: null,
 			prefix: {
 				value: "",
-				use: "top" //can be "top" "all" "positive" or "negative"
+				use: "all" //can be "top" "all" "positive" or "negative"
 			},
 			suffix: {
 				value: "",
-				use: "top"
+				use: "all"
 			},
 			ticks: 6,
 			formatter: null,
@@ -77,7 +77,7 @@ Gneiss.defaultGneissChartConfig = {
 		{
 			name: "Äpfel",
 			data: [5.5,10.2,6.1,3.8],
-			source: "Tourist information Altes Land",
+			source: "",
 			type: "line",
 			axis: 0,
 			color: null
@@ -85,7 +85,7 @@ Gneiss.defaultGneissChartConfig = {
 		{
 			name: "Birnen",
 			data: [23,10.9,13,7],
-			source: "Tourist information Altes Land",
+			source: "",
 			type: "line",
 			axis: 0,
 			color: null
@@ -1015,7 +1015,7 @@ function Gneiss(config)
 					switch(curAxis.prefix.use) {
 						case "all":
 							//if the prefix is supposed to be on every axisItem label, put it there
-							axisItem.text.text(curAxis.prefix.value + axisItem.text.text());
+							axisItem.text.text(curAxis.prefix.value + axisItem.text.text().split(".").join(","));
 						break;
 						
 						case "positive":
