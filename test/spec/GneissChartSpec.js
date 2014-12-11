@@ -4,7 +4,7 @@ describe("Gneiss", function() {
   var gneiss;
   
   beforeEach(function() {
-	  containerId = Gneiss.defaultGneissChartConfig.container.slice(1);
+	  containerId = "chartContainer";
     $('<div id="' + containerId + '" style="display:none"></div>').appendTo('body');
     
     gneiss = new Gneiss(Gneiss.defaultGneissChartConfig);

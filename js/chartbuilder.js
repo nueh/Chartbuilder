@@ -1,6 +1,7 @@
 var chart;
 ChartBuilder = {
-	allColors: ["fd0243", "FF70B0", "E15D98", "C44B81", "A63869", "882551", "6B133A", "4D0022",
+	allColors: ["fd0243", "727271", "333333", "000000", "0c306c", "003553", "fb0000", "f2f2f2",
+		"ffffff", "ff9400", "ffef00", "00f000", "00abcf", "6638cc", "ffa6e6", "ff03ad",
 		"BF600A", "FFC07E", "E1A76A", "C48D55", "A67341", "885A2D", "6B4118", "4D2704",
 		"BFAA00", "FFF270", "E1D55D", "C4B84B", "A69C38", "887F25", "6B6213", "4D4500",
 		"00BFA5", "70FFF7", "5DE1D9", "4BC4BC", "38A69E", "258880", "136B63", "004D45",
@@ -477,10 +478,10 @@ ChartBuilder = {
 				<label for="' + this.idSafe(s.name) + '_color">' + s.name + '</label>\
 				<input id="' + this.idSafe(s.name) + '_color" name="' + this.idSafe(s.name) + '" type="text" />\
 				<select class="typePicker" id="' + this.idSafe(s.name) + '_type">\
-					<option ' + (s.type == "line" ? "selected" : "") + ' value="line">Line</option>\
-					<option ' + (s.type == "column" ? "selected" : "") + ' value="column">Column</option>\
-					<option ' + (s.type == "bargrid" ? "selected" : "") + ' ' + (g.xAxis().type == "date" ? "disabled" : "") + ' value="bargrid">Bar Grid</option>\
-					<option ' + (s.type == "scatter" ? "selected" : "") + ' value="scatter">Scatter</option>\
+					<option ' + (s.type == "line" ? "selected" : "") + ' value="line">Linien</option>\
+					<option ' + (s.type == "column" ? "selected" : "") + ' value="column">Säulen</option>\
+					<option ' + (s.type == "bargrid" ? "selected" : "") + ' ' + (g.xAxis().type == "date" ? "disabled" : "") + ' value="bargrid">Balken</option>\
+					<option ' + (s.type == "scatter" ? "selected" : "") + ' value="scatter">Punkte</option>\
 				</select>\
 				<input id="' + this.idSafe(s.name) + '_check" name="' + this.idSafe(s.name) + '_check" type="checkbox" />\
 				<div class="clearfix"></div>\
@@ -821,12 +822,15 @@ ChartBuilder = {
 // Create default config for chartbuilder
 ChartBuilder.getDefaultConfig = function() {
 	var chartConfig = {};
-	chartConfig.colors = ["#fd0243", "#FF70B0", "#E15D98", "#C44B81", "#A63869", "#882551", "#6B133A", "#4D0022",
-		"#BF600A", "#FFC07E", "#E1A76A", "#C48D55", "#A67341", "#885A2D", "#6B4118", "#4D2704",
-		"#BFAA00", "#FFF270", "#E1D55D", "#C4B84B", "#A69C38", "#887F25", "#6B6213", "#4D4500",
-		"#00BFA5", "#70FFF7", "#5DE1D9", "#4BC4BC", "#38A69E", "#258880", "#136B63", "#004D45",
-		"#006DBF", "#70B8FF", "#5DA1E1", "#4B89C4", "#3871A6", "#255A88", "#13436B", "#002B4D",
-		"#9300BF", "#E770FF", "#CB5DE1", "#AE4BC4", "#9238A6", "#752588", "#59136B", "#3C004D"
+	// chartConfig.colors = ["#fd0243", "#FF70B0", "#E15D98", "#C44B81", "#A63869", "#882551", "#6B133A", "#4D0022",
+	// 	"#BF600A", "#FFC07E", "#E1A76A", "#C48D55", "#A67341", "#885A2D", "#6B4118", "#4D2704",
+	// 	"#BFAA00", "#FFF270", "#E1D55D", "#C4B84B", "#A69C38", "#887F25", "#6B6213", "#4D4500",
+	// 	"#00BFA5", "#70FFF7", "#5DE1D9", "#4BC4BC", "#38A69E", "#258880", "#136B63", "#004D45",
+	// 	"#006DBF", "#70B8FF", "#5DA1E1", "#4B89C4", "#3871A6", "#255A88", "#13436B", "#002B4D",
+	// 	"#9300BF", "#E770FF", "#CB5DE1", "#AE4BC4", "#9238A6", "#752588", "#59136B", "#3C004D"
+	// ];
+	chartConfig.colors = ["#fd0243", "#727271", "#333333", "#000000", "#0c306c", "#003553",
+		"#fb0000", "#f2f2f2", "#ffffff", "#ff9400", "#ffef00", "#00f000", "#00abcf", "#6638cc", "#ffa6e6", "#ff03ad"
 	];
 	chartConfig.creditline = "KRAUTREPORTER " + new Date().getFullYear();
 

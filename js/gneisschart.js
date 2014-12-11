@@ -16,7 +16,7 @@ var yAxisIndex;
 //add prepend ability
 Element.prototype.prependChild = function(child) { this.insertBefore(child, this.firstChild); };
 
-Date.setLocale('de');
+Date.setLocale('en');
 
 //A default configuration 
 //Should change to more d3esque methods e.g. http://bost.ocks.org/mike/chart/
@@ -29,7 +29,7 @@ Gneiss.defaultGneissChartConfig = {
 	bargridBarThickness: 20, //thickness of the bars in a bargrid
 	xAxisMargin: 8, //the vertical space between the plot area and the x axis
 	footerMargin: 4, //the vertical space between the bottom of the bounding box and the meta information
-	legendLabelSpacingX: 5, //the horizontal space between legend items
+	legendLabelSpacingX: 15, //the horizontal space between legend items
 	legendLabelSpacingY: 4, //the vertical space between legend items 
 	columnGap: 1, //the horizontal space between two columns that have the same x-axis value
 	axisBarGap: 5, //the horizontal space between a vertical axis and an adjacent bar
@@ -37,10 +37,12 @@ Gneiss.defaultGneissChartConfig = {
 	primaryAxisPosition: "right", // the first axis will be rendered on this side, "right" or "left" only
 	allowAxisOverlap: false,
 	legend: true, // whether or not there should be a legend
-	title: "", // the chart title 
-	titleBottomMargin: 5, // the vertical space between the title and the next element (sometimes a legend, sometimes an axis)
+	title: "Der ultimative Vergleich", // the chart title 
+	titleBottomMargin: 20, // the vertical space between the title and the next element (sometimes a legend, sometimes an axis)
 	bargridLabelBottomMargin: 5, //the space between the bargrid series label and the top most bar
-	colors: ["#fd0243","#ffb3ff","#e69ce6","#cc87cc","#b373b3","#995f99","#804c80","#665266","#158eff","#99cdff","#9cc2e6","#87abcc","#7394b3","#5f7d99","#466780","#525c66"], 
+	// colors: ["#fd0243","#ffb3ff","#e69ce6","#cc87cc","#b373b3","#995f99","#804c80","#665266","#158eff","#99cdff","#9cc2e6","#87abcc","#7394b3","#5f7d99","#466780","#525c66"],
+	colors: ["#fd0243", "#727271", "#333333", "#000000", "#0c306c", "#003553",
+		"#fb0000", "#f2f2f2", "#ffffff", "#ff9400", "#ffef00", "#00f000", "#00abcf", "#6638cc", "#ffa6e6", "#ff03ad"], 
 	padding :{
 		top: 5,
 		bottom: 50,
@@ -103,7 +105,7 @@ Gneiss.defaultGneissChartConfig = {
 
 Gneiss.dateParsers = {
 	"mmddyyyy": function(d) { return [d.getMonth() + 1, d.getDate(), d.getFullYear()].join("/"); },
-	"ddmmyyyy": function(d) { return [d.getDate(), d.getMonth() + 1, d.getFullYear()].join("/"); },
+	"ddmmyyyy": function(d) { return [d.getDate(), d.getMonth() + 1, d.getFullYear()].join("."); },
 	"mmdd": function(d) { return [d.getMonth() + 1, d.getDate()].join("/"); },
 	"Mdd": function(d) {
 		var month = d.getMonth() + 1;
@@ -117,10 +119,10 @@ Gneiss.dateParsers = {
 	"ddM": function(d) {
 		var month = d.getMonth() + 1;
 		if(month == 5) {
-			return "" + d.getDate() + " " + d.format('{Mon}');
+			return "" + d.getDate() + ". " + d.format('{Mon}');
 		}
 		else {
-			return "" + d.getDate() + " " + d.format('{Mon}.');
+			return "" + d.getDate() + ". " + d.format('{Mon}.');
 		}
 	},
 	"mmyy": function(d) { return [d.getMonth() + 1, String(d.getFullYear()).split("").splice(2,2).join("")].join("/"); },
@@ -1064,8 +1066,10 @@ function Gneiss(config)
 						break;
 					}
 					
+					
 					//replace '.' with ',' -- localization hack
 					axisItem.text.text(axisItem.text.text().split(".").join(","));
+					
 					
 					//find the top most axisItem
 					//store its text element
@@ -1248,19 +1252,19 @@ function Gneiss(config)
 							gapString = g.xAxis().ticks[1], 
 							num = parseInt(g.xAxis().ticks[0]);
 							
-							if((/hour/i).text(gapString)) {
+							if((/Stunde/i).text(gapString)) {
 								gap = d3.time.hour
 							}
-							if((/day/i).test(gapString)) {
+							if((/Tag/i).test(gapString)) {
 								gap = d3.time.hour;
 							}
-							else if((/week/i).test(gapString)) {
+							else if((/Woche/i).test(gapString)) {
 								gap = d3.time.day;
 							}
-							else if((/month/i).test(gapString)) {
+							else if((/Monat/i).test(gapString)) {
 								gap = d3.time.months;
 							}
-							else if((/year/i).test(gapString)) {
+							else if((/Jahr/i).test(gapString)) {
 								gap = d3.time.years;
 							}
 						g.xAxis().axis.ticks(gap,num);
@@ -1360,19 +1364,19 @@ function Gneiss(config)
 					var gapString = g.xAxis().ticks[1];
 					var num = parseInt(g.xAxis().ticks[0],10);
 
-						if( (/hour/i).test(gapString) ) {
+						if( (/Stunde/i).test(gapString) ) {
 							gap = d3.time.hours;
 						}
-						else if((/day/i).test(gapString)) {
+						else if((/Tag/i).test(gapString)) {
 							gap = d3.time.days;
 						}
-						else if((/week/i).test(gapString)) {
+						else if((/Woche/i).test(gapString)) {
 							gap = d3.time.weeks;
 						}
-						else if((/month/i).test(gapString)) {
+						else if((/Monat/i).test(gapString)) {
 							gap = d3.time.months;
 						}
-						else if((/year/i).test(gapString)) {
+						else if((/Jahr/i).test(gapString)) {
 							gap = d3.time.years;
 						}
 					g.xAxis().axis.ticks(gap,num);
@@ -1514,7 +1518,8 @@ function Gneiss(config)
 				
 			//create a group to contain the legend items
 			g.legendItemContainer = g.chartElement().append("g")
-				.attr("id","legendItemContainer");
+				.attr("id","legendItemContainer")
+				.attr("transform", "translate(0,10)");
 				
 				//add columns to chart
 				columnGroups = columnSeries.data(sbt.column)
