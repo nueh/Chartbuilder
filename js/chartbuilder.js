@@ -222,13 +222,13 @@ ChartBuilder = {
 		for (var i = 1; i < r.length; i++) {
 			if (r[i]) {
 				if (d) {
-					r[i][0] = Date.create(r[i][0]).format("{M}/{d}/{yy} {hh}:{mm}");
+					r[i][0] = Date.create(r[i][0]).format("{d}.{M}.{yy} {hh}:{mm}");
 				}
 
 				//add commas to the numbers
-				// for (var j = 0; j < r[i].length; j++) {
-				// 	r[i][j] = this.addCommas(r[i][j]);
-				// }
+				for (var j = 0; j < r[i].length; j++) {
+					r[i][j] = this.addCommas(r[i][j]);
+				}
 
 				$("<tr><td>" + r[i].join("</td><td>") + "</td></tr>")
 					.addClass(i % 2 === 0 ? "otherrow" : "row")
