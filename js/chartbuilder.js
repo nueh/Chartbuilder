@@ -83,7 +83,7 @@ ChartBuilder = {
 			return null;
 		}
 
-		console.log(csv_matrix);
+		// console.log(csv_matrix);
 		return csv_matrix;
 	},
 	// Given the matrix containing the well formated csv, create the object that
@@ -143,10 +143,10 @@ ChartBuilder = {
 			data.push(obj);
 		}
 
-		console.log({
-			data: data,
-			datetime: (/date/gi).test(data[0].name)
-		});
+		// console.log({
+		// 	data: data,
+		// 	datetime: (/date/gi).test(data[0].name)
+		// });
 		return {
 			data: data,
 			datetime: (/date/gi).test(data[0].name)
@@ -337,7 +337,7 @@ ChartBuilder = {
 
 		$("#downloadImageLink").attr("href", canvas.toDataURL("png"))
 			.attr("download", function() {
-				return filename + "_chartbuilder.png";
+				return filename + "_krautchart.png";
 			});
 
 
@@ -351,11 +351,11 @@ ChartBuilder = {
 
 		$("#downloadSVGLink").attr("href", "data:text/svg," + svgContent.source[0])
 			.attr("download", function() {
-				return filename + "_chartbuilder.svg";
+				return filename + "_krautchart.svg";
 			});
 
 		var icon = this.setFavicon();
-		//this.storeLocalChart(filename);
+		// this.storeLocalChart(filename);
 
 		if (!(/Apple/).test(navigator.vendor)) {
 			//blobs dont work in Safari so don't use that method
@@ -832,7 +832,7 @@ ChartBuilder.getDefaultConfig = function() {
 	chartConfig.colors = ["#fd0243", "#727271", "#333333", "#000000", "#0c306c", "#003553",
 		"#fb0000", "#f2f2f2", "#ffffff", "#ff9400", "#ffef00", "#00f000", "#00abcf", "#6638cc", "#ffa6e6", "#ff03ad"
 	];
-	chartConfig.creditline = "KRAUTREPORTER " + new Date().getFullYear();
+	chartConfig.title = "Der ultimative Vergleich"
 
 	return chartConfig;
 };

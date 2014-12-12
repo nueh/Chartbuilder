@@ -29,7 +29,7 @@ Gneiss.defaultGneissChartConfig = {
 	bargridBarThickness: 20, //thickness of the bars in a bargrid
 	xAxisMargin: 8, //the vertical space between the plot area and the x axis
 	footerMargin: 4, //the vertical space between the bottom of the bounding box and the meta information
-	legendLabelSpacingX: 5, //the horizontal space between legend items
+	legendLabelSpacingX: 15, //the horizontal space between legend items
 	legendLabelSpacingY: 4, //the vertical space between legend items 
 	columnGap: 1, //the horizontal space between two columns that have the same x-axis value
 	axisBarGap: 5, //the horizontal space between a vertical axis and an adjacent bar
@@ -37,8 +37,8 @@ Gneiss.defaultGneissChartConfig = {
 	primaryAxisPosition: "right", // the first axis will be rendered on this side, "right" or "left" only
 	allowAxisOverlap: false,
 	legend: true, // whether or not there should be a legend
-	title: "Der ultimative Vergleich", // the chart title 
-	titleBottomMargin: 10, // the vertical space between the title and the next element (sometimes a legend, sometimes an axis)
+	title: "", // the chart title 
+	titleBottomMargin: 20, // the vertical space between the title and the next element (sometimes a legend, sometimes an axis)
 	bargridLabelBottomMargin: 5, //the space between the bargrid series label and the top most bar
 	// colors: ["#fd0243","#ffb3ff","#e69ce6","#cc87cc","#b373b3","#995f99","#804c80","#665266","#158eff","#99cdff","#9cc2e6","#87abcc","#7394b3","#5f7d99","#466780","#525c66"],
 	colors: ["#fd0243", "#727271", "#333333", "#000000", "#0c306c", "#003553",
@@ -100,7 +100,7 @@ Gneiss.defaultGneissChartConfig = {
 		}
 	],
 	sourceline: "",
-	creditline: "KRAUTREPORTER" + new Date().getFullYear()
+	creditline: "KRAUTREPORTER " + new Date().getFullYear()
 };
 
 Gneiss.dateParsers = {
@@ -1322,7 +1322,7 @@ function Gneiss(config)
 						hourGap = 1;
 					}
 
-					console.log(hours, hourGap);
+					// console.log(hours, hourGap);
 
 
 					switch(g.xAxis().formatter) {
@@ -1518,7 +1518,8 @@ function Gneiss(config)
 				
 			//create a group to contain the legend items
 			g.legendItemContainer = g.chartElement().append("g")
-				.attr("id","legendItemContainer");
+				.attr("id","legendItemContainer")
+				.attr("transform", "translate(0,10)");
 				
 				//add columns to chart
 				columnGroups = columnSeries.data(sbt.column)
