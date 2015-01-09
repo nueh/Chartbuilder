@@ -1,12 +1,12 @@
 var chart;
 ChartBuilder = {
-	allColors: ["fd0243", "727271", "333333", "000000", "0c306c", "003553", "fb0000", "f2f2f2",
-		"ffffff", "ff9400", "ffef00", "00f000", "00abcf", "6638cc", "ffa6e6", "ff03ad",
-		"BF600A", "FFC07E", "E1A76A", "C48D55", "A67341", "885A2D", "6B4118", "4D2704",
-		"BFAA00", "FFF270", "E1D55D", "C4B84B", "A69C38", "887F25", "6B6213", "4D4500",
-		"00BFA5", "70FFF7", "5DE1D9", "4BC4BC", "38A69E", "258880", "136B63", "004D45",
-		"006DBF", "70B8FF", "5DA1E1", "4B89C4", "3871A6", "255A88", "13436B", "002B4D",
-		"9300BF", "E770FF", "CB5DE1", "AE4BC4", "9238A6", "752588", "59136B", "3C004D"
+	allColors: ["e42245", "4060b7", "1fb267", "e68130", "2de7c6", "a32de7", "fb0000", "ff9400",
+		"ffef00", "00f000", "00abcf", "6638cc", "ffa6e6", "ff03ad", "BF600A", "FFC07E",
+		"E1A76A", "C48D55", "A67341", "885A2D", "6B4118", "4D2704", "E1D55D", "C4B84B",
+		"A69C38", "887F25", "6B6213", "4D4500", "00BFA5", "70FFF7", "5DE1D9", "4BC4BC",
+		"38A69E", "258880", "136B63", "004D45", "006DBF", "70B8FF", "5DA1E1", "4B89C4",
+		"3871A6", "255A88", "13436B", "002B4D", "9300BF", "E770FF", "CB5DE1", "AE4BC4",
+		"9238A6", "752588"
 	],
 	curRaw: "",
 	advancedMode: false,
@@ -829,8 +829,8 @@ ChartBuilder.getDefaultConfig = function() {
 	// 	"#006DBF", "#70B8FF", "#5DA1E1", "#4B89C4", "#3871A6", "#255A88", "#13436B", "#002B4D",
 	// 	"#9300BF", "#E770FF", "#CB5DE1", "#AE4BC4", "#9238A6", "#752588", "#59136B", "#3C004D"
 	// ];
-	chartConfig.colors = ["#fd0243", "#727271", "#333333", "#000000", "#0c306c", "#003553",
-		"#fb0000", "#f2f2f2", "#ffffff", "#ff9400", "#ffef00", "#00f000", "#00abcf", "#6638cc", "#ffa6e6", "#ff03ad"
+	chartConfig.colors = ["#e42245", "#4060b7", "#1fb267", "#e68130", "#2de7c6", "#a32de7",
+		"#fb0000", "#ff9400", "#ffef00", "#00f000", "#00abcf", "#6638cc", "#ffa6e6", "#ff03ad"
 	];
 	chartConfig.title = "Der ultimative Vergleich"
 
