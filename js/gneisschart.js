@@ -31,7 +31,7 @@ Gneiss.defaultGneissChartConfig = {
 	footerMargin: 4, //the vertical space between the bottom of the bounding box and the meta information
 	legendLabelSpacingX: 15, //the horizontal space between legend items
 	legendLabelSpacingY: 4, //the vertical space between legend items 
-	columnGap: 1, //the horizontal space between two columns that have the same x-axis value
+	columnGap: 10, //the horizontal space between two columns that have the same x-axis value
 	axisBarGap: 5, //the horizontal space between a vertical axis and an adjacent bar
 	maxColumnWidth: 7.5, // the maximum width of a column as a percent of the available chart width	primaryAxisPosition: "right", // the first axis will be rendered on this side, "right" or "left" only
 	primaryAxisPosition: "right", // the first axis will be rendered on this side, "right" or "left" only
@@ -721,13 +721,17 @@ function Gneiss(config)
 		d3.select("rect#ground")
 			.attr("width", g.width())
 			.attr("height", g.height());
-
+			
+			
 		//insert a background rectagle to style the plot area
 		d3.select("rect#plotArea")
 			.attr("transform","translate("+g.padding().left+","+g.padding().top+")")
 			.attr("width",g.width()-g.padding().left-g.padding().right)
 			.attr("height",g.height()-g.padding().top-g.padding().bottom);
-      
+			
+		d3.select("line.tick")
+			.attr("x2", g.width() - g.padding().left - g.padding().right);
+	  
 		g.footerElement().attr("transform","translate(0," + (g.height() - g.footerMargin()) + ")");
 		
 		return this;
@@ -930,6 +934,8 @@ function Gneiss(config)
 		for (var i = g.yAxis().length - 1; i >= 0; i--){
 			if(first || !g.yAxis()[i].line) {
 				g.yAxis()[i].line = d3.svg.line();
+				foo = g.yAxis()[i].line;
+				console.log(foo);
 			}
 
 			g.yAxis()[i].line.y(function(d,j){ return d || d === 0 ? g.yAxis()[yAxisIndex].scale(d) : null });
@@ -1006,12 +1012,14 @@ function Gneiss(config)
 						);
 					
 					//store the text element of the axisItem
-					axisItem.text = d3.select(this).select("text");
+					axisItem.text = d3.select(this).select("text")
+						.attr("x",g.width() - g.padding().left - g.padding().right);
 					
 
 					//store the line element of the axisItem	
 					axisItem.line = d3.select(this).select("line")
-						.attr("stroke","#E6E6E6");
+						.attr("stroke","#E6E6E6")
+						.attr("x2",g.width() - g.padding().left - g.padding().right);
 						
 					
 					//apply the prefix as appropriate
