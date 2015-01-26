@@ -344,10 +344,8 @@ ChartBuilder = {
 		var svgContent = this.createSVGContent(document.getElementById("chart"));
 
 		svgContent.source[0] = svgContent.source[0]
-			// .split('width="100%"').join('width="' + canvas.width + '"')
-			// .split('height="100%"').join('height="' + canvas.height + '"');
-			.split('width="100%"').join('width="'+$('#chartContainer').width()+'"')
-			.split('height="100%"').join('height="'+$('#chartContainer').height()+'"');
+			.split('width="100%"').join('width="' + canvas.width + '"')
+			.split('height="100%"').join('height="' + canvas.height + '"');
 
 		svgContent.source[0] = ChartBuilder.cleanSVGString(svgContent.source[0])
 
@@ -835,7 +833,6 @@ ChartBuilder.getDefaultConfig = function() {
 		"#fb0000", "#ff9400", "#ffef00", "#00f000", "#00abcf", "#6638cc", "#ffa6e6", "#ff03ad"
 	];
 	chartConfig.title = "Der ultimative Vergleich"
-	chartConfig.bargridLabelBottomMargin = 5
 
 	return chartConfig;
 };
